@@ -1,8 +1,16 @@
+process.stdin.on('end', _ => {
+    inputString = inputString.replace(/\s*$/, '')
+        .split('\n')
+        .map(str => str.replace(/\s*$/, ''));
+    weiredFunc(inputString);
+    main();
+});
+
 const weiredFunc = (input) => {
-    const conditionOne = (oddOrEven(input) === 'odd');
-    const conditionTwo = (oddOrEven(input) === 'even' && input >= 2 && input <= 5)
-    const conditionThree = (oddOrEven(input) === 'even' && input >= 6 && input <= 20);
-    const conditionFour = (oddOrEven(input) === 'even' && input > 20);
+    const conditionOne = !oddOrEven(input);
+    const conditionTwo = oddOrEven(input) && input >= 2 && input <= 5;
+    const conditionThree = oddOrEven(input) && input >= 6 && input <= 20;
+    const conditionFour = oddOrEven(input) && input > 20;
 
     if (conditionOne || conditionThree) {
         console.log('Weird');
@@ -12,10 +20,6 @@ const weiredFunc = (input) => {
     }
 }
 
-function oddOrEven(inputNum) {
-    if (inputNum % 2) {
-        return 'odd';
-    } else {
-        return 'even';
-    }
+const oddOrEven = inputNum => {
+    return inputNum % 2 === 0 ? true : false;
 }

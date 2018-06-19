@@ -1,18 +1,7 @@
+function solve(meal_cost, tip_percent, tax_percent) {
+    const tip_percent_val = (meal_cost * tip_percent) / 100;
+    const tax_percent_val = (meal_cost * tax_percent) / 100;
+    const totalCost = meal_cost + tip_percent_val + tax_percent_val;
 
-    // Declare second integer, double, and String variables.
-    var w;
-    var a;
-    var j;
-
-    // Read and save an integer, double, and String to your variables.
-    w = parseInt(readLine());
-    a = parseFloat(readLine());
-    j = readLine();
-    // Print the sum of both integer variables on a new line.
-    console.log(w+i);
-
-    // Print the sum of the double variables on a new line.
-    console.log((d+a).toFixed(1));
-    // Concatenate and print the String variables on a new line
-    // The 's' variable above should be printed first.
-    console.log(s+j);
+    console.log(`The total meal cost is ${Math.round(totalCost)} dollars.`);
+}

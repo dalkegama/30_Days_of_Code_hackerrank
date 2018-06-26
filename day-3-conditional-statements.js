@@ -1,10 +1,3 @@
-process.stdin.on('end', _ => {
-    inputString = inputString.replace(/\s*$/, '')
-        .split('\n')
-        .map(str => str.replace(/\s*$/, ''));
-    weiredFunc(inputString);
-    main();
-});
 
 const weiredFunc = (input) => {
     const conditionOne = !oddOrEven(input);
